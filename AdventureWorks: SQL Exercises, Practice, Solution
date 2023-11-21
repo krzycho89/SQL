@@ -1,0 +1,30 @@
+1. Q: From the following table write a query in SQL to retrieve all rows and columns from the employee table in the Adventureworks database. Sort the result set in ascending order on jobtitle.
+1. A:
+
+select * 
+from HumanResources.Employee 
+order by JobTitle ASC
+
+2. Q: From the following table write a query in SQL to retrieve all rows and columns from the employee table using table aliasing in the Adventureworks database. Sort the output in ascending order on lastname.
+2.A: 
+select FirstName, LastName, BusinessEntityID as number_Person 
+from Person.Person 
+order by LastName asc
+
+3. Q: From the following table write a query in SQL to return all rows and a subset of the columns (FirstName, LastName, businessentityid) from the person table in the AdventureWorks database. The third column heading is renamed to Employee_id. Arranged the output in ascending order by lastname.
+3. A: 
+select FirstName, LastName, BusinessEntityID as Employee_id
+from Person.Person 
+order by LastName
+
+4. Q: From the following table write a query in SQL to return only the rows for product that have a sellstartdate that is not NULL and a productline of 'T'. Return productid, productnumber, and name. Arranged the output in ascending order on name.
+4. A:
+select ProductID, ProductNumber, Name
+from Production.Product
+where SellStartDate is not null and ProductLine = 'T'
+order by name asc
+
+5: Q: From the following table write a query in SQL to return all rows from the salesorderheader table in Adventureworks database and calculate the percentage of tax on the subtotal have decided. Return salesorderid, customerid, orderdate, subtotal, percentage of tax column. Arranged the result set in ascending order on subtotal.
+5: A: select  SalesOrderID,CustomerID, OrderDate,SubTotal, (taxamt*100)/subtotal AS Tax_percent
+from Sales.SalesOrderHeader
+order by SubTotal desc
