@@ -1,0 +1,7 @@
+--
+Select FirstName, LastName,
+CASE
+WHEN Gender = 'W' THEN 'FACETKA'
+WHEN Gender = 'M' THEN 'FACET'
+END as 'Płeć słownie z wykorzystaniem CASE bo tak mi wygodnie'
+from Employee
